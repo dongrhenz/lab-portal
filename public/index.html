@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab Results Portal</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/logo.css">
+<style>
+  
+</style>
+</head>
+<body class="login-page">
+
+  <div class="container">
+    <div class="card">
+      <div class="logo-container">
+    <div class="logo-icon">
+      <!-- <div class="medical-cross"></div> -->
+      <img src="images/logos.png" alt="Hospital logo" class="logo-circle">
+    </div>
+    <div class="logo-text">
+      <div class="logo-title">ST. VINCENT</div>
+      <div class="logo-title">GENERAL HOSPITAL</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tagline">
+      <span class="dot"></span>
+      Trusted Healthcare in Cebu
+    </div>
+  </div>
+      <!-- Screen 1: verify identity -->
+      <div id="screen-verify">
+        <h2>Check your lab results</h2>
+        <p class="subtitle">Enter the case number and full name exactly as printed on your lab request slip.</p>
+
+        <div class="sample-slip">
+          <div class="sample-slip-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 12l2 2 4-4M12 3l1.5 2.5L16 4l.5 3 3 .5-1.5 2.5L19 13l-3 .5-.5 3-2.5-1.5L11 17l-1.5-2.5L7 15l.5-3-3-.5 1.5-2.5L5 6l3-.5.5-3L11 4l1-1z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
+            Where to find these
+          </div>
+          <div class="slip-mock">
+            <strong>Patient Name:</strong> DELA CRUZ, JUAN SANTOS &nbsp;&nbsp; <strong>Case No.:</strong> <mark>9095708</mark><br>
+            <strong>Full name to enter:</strong> <mark>Dela Cruz, Juan Santos</mark>
+          </div>
+        </div>
+
+        <label for="caseNo">Case Number</label>
+        <input type="text" id="caseNo" placeholder="e.g. 9095708" autocomplete="off" inputmode="numeric">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="e.g. Dela Cruz, Juan Santos" autocomplete="off">
+        <div class="error-box" id="verify-error"></div>
+        <button class="primary" id="btn-verify">Continue</button>
+      </div>
+
+      <!-- Screen 2a: first-time PIN setup -->
+      <div id="screen-setup-pin" style="display:none">
+        <h2>Set up your PIN</h2>
+        <p class="subtitle" id="welcome-name"></p>
+        <p class="hint">You're verifying for the first time. Choose a 4-8 digit PIN — you'll use your case number and this PIN to sign in from now on.</p>
+        <label for="pin1">New PIN</label>
+        <input type="password" id="pin1" inputmode="numeric" maxlength="8" placeholder="4-8 digits">
+        <label for="pin2">Confirm PIN</label>
+        <input type="password" id="pin2" inputmode="numeric" maxlength="8" placeholder="Re-enter PIN">
+        <div class="error-box" id="setup-error"></div>
+        <button class="primary" id="btn-setup-pin">Save PIN &amp; Continue</button>
+      </div>
+
+      <!-- Screen 2b: returning patient PIN login -->
+      <div id="screen-pin-login" style="display:none">
+        <h2>Enter your PIN</h2>
+        <p class="subtitle">A PIN is already set for this case number.</p>
+        <label for="pinLogin">PIN</label>
+        <input type="password" id="pinLogin" inputmode="numeric" maxlength="8" placeholder="Your PIN">
+        <div class="error-box" id="pin-error"></div>
+        <button class="primary" id="btn-pin-login">Sign In</button>
+        <button class="link" id="btn-back">&larr; Back</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>
