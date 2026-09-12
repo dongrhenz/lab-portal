@@ -1,5 +1,4 @@
----
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/svghph/public_html
+    - export DEPLOYPATH=/home/svghph/public_html/lab-portal-online/
     - /bin/cp -R * $DEPLOYPATH
